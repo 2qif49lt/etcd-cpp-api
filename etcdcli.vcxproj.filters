@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{28c8cbc5-a2a2-4d8e-8ad7-877747312b08}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="etcd">
+      <UniqueIdentifier>{eb10593b-e24d-4eee-9f24-9efc0d20be75}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="etcd\Client.hpp">
+      <Filter>etcd</Filter>
+    </ClInclude>
+    <ClInclude Include="etcd\Response.hpp">
+      <Filter>etcd</Filter>
+    </ClInclude>
+    <ClInclude Include="etcd\Value.hpp">
+      <Filter>etcd</Filter>
+    </ClInclude>
+    <ClInclude Include="src\json_constants.hpp">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="etcd\api.hpp">
+      <Filter>etcd</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Client.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\json_constants.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Response.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Value.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dllmain.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

@@ -5,16 +5,17 @@
 #include <string>
 #include <vector>
 
-#include "etcd/Value.hpp"
+#include "api.hpp"
+#include "Value.hpp"
 
 namespace etcd
 {
-  typedef std::vector<std::string> Keys;
+  _etcdclidll typedef std::vector<std::string> Keys;
 
   /**
    * The Reponse object received for the requests of etcd::Client
    */
-  class Response
+   class _etcdclidll Response
   {
   public:
     static pplx::task<Response> create(pplx::task<web::http::http_response> response_task);

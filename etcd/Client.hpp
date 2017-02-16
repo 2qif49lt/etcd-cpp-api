@@ -1,7 +1,8 @@
 #ifndef __ETCD_CLIENT_HPP__
 #define __ETCD_CLIENT_HPP__
 
-#include "etcd/Response.hpp"
+#include "api.hpp"
+#include "Response.hpp"
 
 #include <cpprest/http_client.h>
 #include <string>
@@ -12,7 +13,7 @@ namespace etcd
    * Client is responsible for maintaining a connection towards an etcd server.
    * Etcd operations can be reached via the methods of the client.
    */
-  class Client
+   class _etcdclidll Client
   {
   public:
     /**

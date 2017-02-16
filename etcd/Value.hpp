@@ -5,12 +5,14 @@
 #include <string>
 #include <vector>
 
+#include "api.hpp"
+
 namespace etcd
 {
   /**
    * Represents a value object received from the etcd server
    */
-  class Value
+   class _etcdclidll Value
   {
   public:
     /**
@@ -50,7 +52,7 @@ namespace etcd
     int         modified;
   };
 
-  typedef std::vector<Value> Values;
+ _etcdclidll typedef std::vector<Value> Values;
 }
 
 #endif

@@ -1,14 +1,14 @@
 #include "json_constants.hpp"
 
-char const * etcd::JSON_KEY        = "key";
-char const * etcd::JSON_DIR        = "dir";
-char const * etcd::JSON_VALUE      = "value";
-char const * etcd::JSON_CREATED    = "createdIndex";
-char const * etcd::JSON_MODIFIED   = "modifiedIndex";
-char const * etcd::JSON_ERROR_CODE = "errorCode";
-char const * etcd::JSON_MESSAGE    = "message";
-char const * etcd::JSON_ACTION     = "action";
-char const * etcd::JSON_NODE       = "node";
-char const * etcd::JSON_NODES      = "nodes";
-char const * etcd::JSON_PREV_NODE  = "prevNode";
-char const * etcd::JSON_ETCD_INDEX = "X-Etcd-Index";
+char_t const * etcd::JSON_KEY        = U("key");
+char_t const * etcd::JSON_DIR        = U("dir");
+char_t const * etcd::JSON_VALUE      = U("value");
+char_t const * etcd::JSON_CREATED    = U("createdIndex");
+char_t const * etcd::JSON_MODIFIED   = U("modifiedIndex");
+char_t const * etcd::JSON_ERROR_CODE = U("errorCode");
+char_t const * etcd::JSON_MESSAGE    = U("message");
+char_t const * etcd::JSON_ACTION     = U("action");
+char_t const * etcd::JSON_NODE       = U("node");
+char_t const * etcd::JSON_NODES      = U("nodes");
+char_t const * etcd::JSON_PREV_NODE  = U("prevNode");
+char_t const * etcd::JSON_ETCD_INDEX = U("X-Etcd-Index");

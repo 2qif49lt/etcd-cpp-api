@@ -1,5 +1,6 @@
-#include "etcd/Response.hpp"
+#include "../etcd/Response.hpp"
 #include "json_constants.hpp"
+#include <cpprest/asyncrt_utils.h>
 
 pplx::task<etcd::Response> etcd::Response::create(pplx::task<web::http::http_response> response_task)
 {
@@ -20,26 +21,26 @@ etcd::Response::Response(web::http::http_response http_response, web::json::valu
     _index(0)
 {
   if (http_response.headers().has(JSON_ETCD_INDEX))
-    _index = atoi(http_response.headers()[JSON_ETCD_INDEX].c_str());
+    _index = atoi(utility::conversions::to_utf8string(http_response.headers()[JSON_ETCD_INDEX]).c_str());
 
   if (json_value.has_field(JSON_ERROR_CODE))
   {
-    _error_code = json_value[JSON_ERROR_CODE].as_number().to_int64();
-    _error_message = json_value[JSON_MESSAGE].as_string();
+    _error_code = int(json_value[JSON_ERROR_CODE].as_number().to_int64());
+    _error_message = utility::conversions::to_utf8string(json_value[JSON_MESSAGE].as_string());
   }
 
   if (json_value.has_field(JSON_ACTION))
-    _action = json_value[JSON_ACTION].as_string();
+    _action = utility::conversions::to_utf8string(json_value[JSON_ACTION].as_string());
 
   if (json_value.has_field(JSON_NODE))
   {
     if (json_value[JSON_NODE].has_field(JSON_NODES))
     {
-      std::string prefix = json_value[JSON_NODE][JSON_KEY].as_string();
+      utility::string_t prefix = json_value[JSON_NODE][JSON_KEY].as_string();
       for (auto & node : json_value[JSON_NODE][JSON_NODES].as_array())
       {
         _values.push_back(Value(node));
-        _keys.push_back(node[JSON_KEY].as_string().substr(prefix.length() + 1));
+        _keys.push_back(utility::conversions::to_utf8string(node[JSON_KEY].as_string().substr(prefix.length() + 1)));
       }
     }
     else
